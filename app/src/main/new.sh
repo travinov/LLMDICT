@@ -1,1 +1,0 @@
-"/Volumes/SSD APFS/Application/Android SDK/platform-tools/adb" push "/Volumes/SSD APFS/vosk-model-ru-0.42" /storage/emulated/0/Android/data/com.example.llmdict/files/vosk-model

@@ -1,0 +1,37 @@
+name: Firmware
+
+on:
+  push:
+    paths:
+      - "firmware/**"
+      - "scripts/firmware.sh"
+      - ".github/workflows/firmware.yml"
+  pull_request:
+    paths:
+      - "firmware/**"
+      - "scripts/firmware.sh"
+      - ".github/workflows/firmware.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - name: Install pinned Seeed nRF52 core
+        run: ./scripts/firmware.sh setup
+      - name: Build recorder
+        run: ./scripts/firmware.sh build
+      - name: Build diagnostic
+        run: ./scripts/firmware.sh build llm_dict_diagnostic
+      - name: Upload firmware artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: llm-dict-firmware
+          path: .build/llm_dict_recorder/*
+          if-no-files-found: error

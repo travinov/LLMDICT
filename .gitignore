@@ -1,18 +1,36 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+# macOS
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+
+# Secrets and signing material
+.env
+.env.*
+!.env.example
+*.mobileprovision
+*.p8
+*.p12
+*.pem
+
+# Xcode
+DerivedData/
+.deriveddata-*/
+.verification/
+build/
+*.xcuserstate
+xcuserdata/
+*.xcodeproj.before-xcodegen/
+
+# Arduino / firmware
+.build/
+recordings/
+*.wav
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Android legacy project
+.gradle/
 local.properties
-.navigation
-/app/build
-/app/android_russian_trusted_root_ca
+**/build/
+.idea/

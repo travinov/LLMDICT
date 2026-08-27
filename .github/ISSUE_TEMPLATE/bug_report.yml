@@ -1,0 +1,41 @@
+name: Bug report
+description: Сообщить о воспроизводимой проблеме в iOS, firmware или BLE
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Компонент
+      options:
+        - iOS application
+        - Recorder firmware
+        - BLE transfer
+        - Documentation
+        - Android legacy
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что произошло
+      description: Не прикладывайте API-ключи и реальные пользовательские записи.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги воспроизведения
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Commit / версия
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Окружение
+      description: Модель iPhone и iOS/Xcode либо плата, core и serial output без чувствительных данных.
