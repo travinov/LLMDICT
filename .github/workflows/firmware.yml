@@ -25,6 +25,11 @@ jobs:
       - uses: arduino/setup-arduino-cli@v2
       - name: Install pinned Seeed nRF52 core
         run: ./scripts/firmware.sh setup
+      - name: Install Seeed Linux DFU packager
+        run: |
+          python3 -m venv "$RUNNER_TEMP/adafruit-nrfutil"
+          "$RUNNER_TEMP/adafruit-nrfutil/bin/python" -m pip install "adafruit-nrfutil==0.5.3.post16"
+          echo "$RUNNER_TEMP/adafruit-nrfutil/bin" >> "$GITHUB_PATH"
       - name: Build recorder
         run: ./scripts/firmware.sh build
       - name: Build diagnostic

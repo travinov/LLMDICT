@@ -15,9 +15,9 @@ fi
 case "$action" in
   setup)
     arduino-cli core update-index --additional-urls "$board_index_url"
-    # Non-interactive CI skips platform post-install hooks unless explicitly
-    # requested. Seeed's hook installs adafruit-nrfutil, required to emit DFU
-    # artifacts even when the command only compiles the sketch.
+    # Run any platform hooks when setup is used non-interactively. On Linux the
+    # Seeed BSP additionally expects adafruit-nrfutil on PATH; CI installs the
+    # pinned Python package in its own virtual environment.
     arduino-cli core install "$board_core" \
       --additional-urls "$board_index_url" \
       --run-post-install
