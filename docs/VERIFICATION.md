@@ -42,7 +42,7 @@
 | Source inventory / secret hygiene | подтверждено |
 | Firmware compile | подтверждено |
 | iOS unit tests / analyzer | подтверждено |
-| GitHub Actions firmware build | проверяется после push |
+| GitHub Actions firmware build | подтверждено на чистом Ubuntu runner: [run 33086720389](https://github.com/travinov/LLMDICT/actions/runs/33086720389) |
 | Физический recorder после этого snapshot | не повторялся |
 | Физический iPhone после этого snapshot | не повторялся |
 | Production cloud APIs | не повторялись |

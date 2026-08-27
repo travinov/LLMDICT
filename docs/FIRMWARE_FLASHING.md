@@ -119,7 +119,7 @@ python3 scripts/retrieve_wav.py /dev/cu.usbmodem101
 arduino-cli upload \
   --fqbn Seeeduino:nrf52:xiaonRF52840SensePlus \
   --port /dev/cu.usbmodem101 \
-  --input-file llm_dict_recorder-0.1.0.hex
+  --input-file llm_dict_recorder-0.1.1.hex
 ```
 
 Сборка из исходников остаётся рекомендуемым способом: она гарантирует соответствие `.hex` текущему commit.
